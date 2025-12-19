@@ -1,42 +1,25 @@
+// server.js - Рабочая версия для Vercel Serverless
 const jsonServer = require('json-server');
+
+// Создаём сервер
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
-const cors = require('cors');
 
-// Enable CORS for all routes
-server.use(cors());
-
-// Use default middlewares
-server.use(middlewares);
-
-// Add custom routes if needed
-server.use(jsonServer.bodyParser);
-
-// Custom middleware to handle POST/PUT/DELETE
+// Настраиваем CORS для фронтенда
 server.use((req, res, next) => {
-  if (req.method === 'POST') {
-    req.body.createdAt = new Date().toISOString();
-  }
-  if (req.method === 'PUT') {
-    req.body.updatedAt = new Date().toISOString();
-  }
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', '*');
   next();
 });
 
-// Use JSON Server router
-server.use('/api', router);
+// Используем middleware
+server.use(middlewares);
+server.use(jsonServer.bodyParser);
 
-const PORT = process.env.PORT || 3000;
+// Всегда отдаём router (все маршруты)
+server.use(router);
 
-server.listen(PORT, () => {
-  console.log(`Pet Tracker API is running on port ${PORT}`);
-  console.log(`API Endpoints:`);
-  console.log(`  GET    /api/pets`);
-  console.log(`  GET    /api/pets/:id`);
-  console.log(`  POST   /api/pets`);
-  console.log(`  PUT    /api/pets/:id`);
-  console.log(`  DELETE /api/pets/:id`);
-  console.log(`  GET    /api/events?petId=:petId`);
-  console.log(`  GET    /api/careItems?petId=:petId`);
-});
+// Экспортируем для Vercel Serverless
+module.exports = server;
