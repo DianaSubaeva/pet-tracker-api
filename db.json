@@ -1,0 +1,112 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "name": "Джаспер",
+      "type": "cat",
+      "breed": "Абиссинский",
+      "age": 3,
+      "weight": 4.8,
+      "healthStatus": "Отличное",
+      "nextVaccination": "2025-11-22",
+      "avatar": "cat",
+      "allergies": [],
+      "healthMetrics": {
+        "appetite": 92,
+        "activity": 88,
+        "sleep": 95,
+        "mood": 90
+      },
+      "weightHistory": [
+        { "date": "2025-08-01", "weight": 4.6 },
+        { "date": "2025-09-01", "weight": 4.7 },
+        { "date": "2025-10-01", "weight": 4.8 }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Вупи",
+      "type": "dog",
+      "breed": "Золотистый ретривер",
+      "age": 5,
+      "weight": 28,
+      "healthStatus": "Хорошее",
+      "nextVaccination": "2025-11-15",
+      "avatar": "dog",
+      "allergies": [],
+      "healthMetrics": {
+        "appetite": 85,
+        "activity": 90,
+        "sleep": 88,
+        "mood": 92
+      },
+      "weightHistory": [
+        { "date": "2025-08-01", "weight": 27.5 },
+        { "date": "2025-09-01", "weight": 27.8 },
+        { "date": "2025-10-01", "weight": 28 }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "petId": 1,
+      "title": "Визит к ветеринару",
+      "description": "Ежегодный осмотр и консультация",
+      "date": "2025-10-28",
+      "time": "10:00",
+      "type": "medical"
+    },
+    {
+      "id": 2,
+      "petId": 1,
+      "title": "Витамины",
+      "description": "Еженедельный прием добавок",
+      "date": "2025-10-27",
+      "time": "09:00",
+      "type": "medication"
+    }
+  ],
+  "careItems": [
+    {
+      "id": 101,
+      "petId": 1,
+      "date": "2025-10-25",
+      "type": "feeding",
+      "title": "Кормление",
+      "time": "2 часа назад",
+      "description": "Сухой корм Premium 60г",
+      "details": "Кормление прошло нормально, аппетит хороший"
+    },
+    {
+      "id": 102,
+      "petId": 1,
+      "date": "2025-10-25",
+      "type": "walk",
+      "title": "Прогулка",
+      "time": "4 часа назад",
+      "description": "Утренняя прогулка в парке",
+      "details": "Активная прогулка продолжительностью 45 минут"
+    },
+    {
+      "id": 201,
+      "petId": 1,
+      "date": "2025-10-24",
+      "type": "medication",
+      "title": "Витамины",
+      "time": "24 октября, 09:00",
+      "description": "Комплекс витаминов для шерсти",
+      "details": "Принял витамины без проблем"
+    },
+    {
+      "id": 202,
+      "petId": 1,
+      "date": "2025-10-24",
+      "type": "play",
+      "title": "Активные игры",
+      "time": "24 октября, 18:00",
+      "description": "Игра с мячом в саду",
+      "details": "Играл активно, хорошо отреагировал на команды"
+    }
+  ]
+}
